@@ -11,6 +11,11 @@
 		11CA91EC29DB9F34004F4E89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA91EB29DB9F34004F4E89 /* ContentView.swift */; };
 		11CA91EE29DB9F35004F4E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11CA91ED29DB9F35004F4E89 /* Assets.xcassets */; };
 		11CA91F229DB9F35004F4E89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11CA91F129DB9F35004F4E89 /* Preview Assets.xcassets */; };
+		11CA91FA29DBA45D004F4E89 /* server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA91F829DBA45D004F4E89 /* server.pb.swift */; };
+		11CA91FB29DBA45D004F4E89 /* server.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA91F929DBA45D004F4E89 /* server.grpc.swift */; };
+		11CA91FE29DBA660004F4E89 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 11CA91FD29DBA660004F4E89 /* SwiftProtobuf */; };
+		11CA920129DBAE4D004F4E89 /* CGRPCZlib in Frameworks */ = {isa = PBXBuildFile; productRef = 11CA920029DBAE4D004F4E89 /* CGRPCZlib */; };
+		11CA920329DBAE4D004F4E89 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 11CA920229DBAE4D004F4E89 /* GRPC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,8 @@
 		11CA91ED29DB9F35004F4E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11CA91EF29DB9F35004F4E89 /* gRPC_Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gRPC_Test.entitlements; sourceTree = "<group>"; };
 		11CA91F129DB9F35004F4E89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		11CA91F829DBA45D004F4E89 /* server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = server.pb.swift; sourceTree = "<group>"; };
+		11CA91F929DBA45D004F4E89 /* server.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = server.grpc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +34,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CA91FE29DBA660004F4E89 /* SwiftProtobuf in Frameworks */,
+				11CA920129DBAE4D004F4E89 /* CGRPCZlib in Frameworks */,
+				11CA920329DBAE4D004F4E89 /* GRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +62,8 @@
 		11CA91E829DB9F34004F4E89 /* gRPC-Test */ = {
 			isa = PBXGroup;
 			children = (
+				11CA91F929DBA45D004F4E89 /* server.grpc.swift */,
+				11CA91F829DBA45D004F4E89 /* server.pb.swift */,
 				11CA91E929DB9F34004F4E89 /* gRPC_TestApp.swift */,
 				11CA91EB29DB9F34004F4E89 /* ContentView.swift */,
 				11CA91ED29DB9F35004F4E89 /* Assets.xcassets */,
@@ -85,6 +97,11 @@
 			dependencies = (
 			);
 			name = "gRPC-Test";
+			packageProductDependencies = (
+				11CA91FD29DBA660004F4E89 /* SwiftProtobuf */,
+				11CA920029DBAE4D004F4E89 /* CGRPCZlib */,
+				11CA920229DBAE4D004F4E89 /* GRPC */,
+			);
 			productName = "gRPC-Test";
 			productReference = 11CA91E629DB9F34004F4E89 /* gRPC-Test.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +130,10 @@
 				Base,
 			);
 			mainGroup = 11CA91DD29DB9F34004F4E89;
+			packageReferences = (
+				11CA91FC29DBA660004F4E89 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+				11CA91FF29DBAE4D004F4E89 /* XCRemoteSwiftPackageReference "grpc-swift" */,
+			);
 			productRefGroup = 11CA91E729DB9F34004F4E89 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				11CA91EC29DB9F34004F4E89 /* ContentView.swift in Sources */,
+				11CA91FB29DBA45D004F4E89 /* server.grpc.swift in Sources */,
+				11CA91FA29DBA45D004F4E89 /* server.pb.swift in Sources */,
 				11CA91EA29DB9F34004F4E89 /* gRPC_TestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +377,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11CA91FC29DBA660004F4E89 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		11CA91FF29DBAE4D004F4E89 /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11CA91FD29DBA660004F4E89 /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11CA91FC29DBA660004F4E89 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+		11CA920029DBAE4D004F4E89 /* CGRPCZlib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11CA91FF29DBAE4D004F4E89 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = CGRPCZlib;
+		};
+		11CA920229DBAE4D004F4E89 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11CA91FF29DBAE4D004F4E89 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 11CA91DE29DB9F34004F4E89 /* Project object */;
 }
