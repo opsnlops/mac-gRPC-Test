@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import GRPC
+import NIOCore
+import NIOPosix
+
+
 
 @main
 struct gRPC_TestApp: App {
+    
+    @StateObject private var grpcManager = GRPCManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(grpcManager)
         }
     }
 }
